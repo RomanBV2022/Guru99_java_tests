@@ -1,6 +1,7 @@
 package automation.tests.runner;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
@@ -16,6 +17,10 @@ public abstract class BaseTest {
     private WebDriverWait wait2;
     private WebDriverWait wait5;
     private WebDriverWait wait10;
+    private static final String USER_ID = "mngr548824";
+    private static final String PASSWORD = "tArabAq";
+
+
 
 
     private void startDriver() {
@@ -31,10 +36,12 @@ public abstract class BaseTest {
 
     private void loginWeb() {
         ProjectUtils.log("Login");
+
+
     }
 
-    private void getWeb() {
-        ProjectUtils.log("Get web page: https://demo.guru99.com/");
+    private void getWeb(String site) {
+        ProjectUtils.log(site);
         ProjectUtils.get(driver);
     }
 
@@ -72,7 +79,7 @@ public abstract class BaseTest {
         try {
             clearData();
             startDriver();
-            getWeb();
+            getWeb("Get web page: https://demo.guru99.com/");
             loginWeb();
 
         } catch (Exception e) {
