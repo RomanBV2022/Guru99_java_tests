@@ -42,7 +42,7 @@ public class VerifyLoginAccountTest extends BaseTest {
     }
 
     @Test(priority = 10)
-    public void invalidIdLogin() {
+    public void testInvalidIdLogin() {
         String getInvalidMessage = new HomePage(getDriver())
                 .scroollPage()
                 .setInvalidLoginID()
